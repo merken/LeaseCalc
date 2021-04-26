@@ -1,0 +1,41 @@
+# Use this endpoint when running on Docker
+POST http://localhost/api/StartLeaseCalc/journey.v1
+# Use this endpoint when running locally (F5 Debugging)
+# POST http://localhost:7071/api/StartLeaseCalc/journey.v1
+# Use this endpoint to trigger this on Azure
+# POST https://leasecalc.azurewebsites.net/api/StartLeaseCalc/journey.v2
+Content-Type: application/json
+
+{
+    "leaseInformation": {
+        "termInMonths": 60,
+        "initialDownPayment": 5000,
+        "kmsPerYear": 30000
+    },
+    "customerInformation": {
+        "customerId": 123456,
+        "customerCreditScore": 68,
+        "emailAddress": "merken.maarten@gmail.com"
+    },
+    "driverInformation": {
+        "firstName": "Maarten",
+        "lastName": "Merken",
+        "age": 31
+    },
+    "vehicleInformation": {
+        "retailPrice": 45000.00,
+        "brand": "AUDI",
+        "model": "A4",
+        "features": [
+            {
+                "featureCode": "DIESEL"
+            },
+            {
+                "featureCode": "COMBUSTION_ENGINE"
+            },
+            {
+                "featureCode": "AIRCO"
+            }
+        ]
+    }
+}

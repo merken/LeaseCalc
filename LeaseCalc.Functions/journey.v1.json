@@ -1,0 +1,21 @@
+{
+    "journey": {
+        "rentalPriceComponents": [
+            "RentalPrice.Component,1.0.0"
+        ],
+        "residualValueComponents": [
+            "Day1.Component,1.0.0",
+            "BrandValue.Component,1.0.0",
+            "EngineWear.Component,1.0.0",
+            "FeatureBasedResidualValue.Component,1.0.0"
+        ],
+        "monthlyLeaseComponents": [
+            "BruteMonthlyLease.Component,1.0.0"
+        ],
+        "servicesComponents": [
+            "Insurance.Component,1.0.0",
+            "MaintenanceCost.Component,1.0.0",
+            "CustomerRisk.Component,1.0.0"
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/BrandValue.Component.1.0.0.nupkg
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/BruteMonthlyLease.Component.1.0.0.nupkg
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/CustomerRisk.Component.1.0.0.nupkg
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/Day1.Component.1.0.0.nupkg
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/EngineWear.Component.1.0.0.nupkg
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/FeatureBasedResidualValue.Component.1.0.0.nupkg
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/Insurance.Component.1.0.0.nupkg
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/MaintenanceCost.Component.1.0.0.nupkg
+dotnet nuget push -s http://localhost:8080/v3/index.json _dist/RentalPrice.Component.1.0.0.nupkg

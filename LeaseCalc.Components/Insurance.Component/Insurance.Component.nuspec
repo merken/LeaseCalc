@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<package>
+    <metadata>
+        <id>Insurance.Component</id>
+        <title>Insurance.Component</title>
+        <version>1.0.0</version>
+        <authors>LeaseCorp</authors>
+        <owners>Maarten Merken</owners>
+        <description>Insurance.Component</description>
+        <copyright>Copyright 2020</copyright>
+        <tags></tags>
+        <icon>icon.png</icon>
+    </metadata>
+    <files>
+        <file src='bin/Debug/netcoreapp3.1/publish/*.*' target='lib/netcoreapp3.1' />
+        <file src="../icon.png" target="icon.png" />
+    </files>
+</package>

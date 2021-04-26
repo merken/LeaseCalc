@@ -1,2 +1,2 @@
 # LeaseCalc
-LeaseCalc, a fictional Leasing Price Calculator
+https://merken.github.io/LeaseCalc

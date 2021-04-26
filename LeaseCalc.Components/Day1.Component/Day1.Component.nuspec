@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<package>
+    <metadata>
+        <id>Day1.Component</id>
+        <title>Day1.Component</title>
+        <version>1.0.0</version>
+        <authors>LeaseCorp</authors>
+        <owners>Maarten Merken</owners>
+        <description>Day1.Component</description>
+        <copyright>Copyright 2020</copyright>
+        <tags></tags>
+        <icon>icon.png</icon>
+    </metadata>
+    <files>
+        <file src='bin/Debug/netcoreapp2.1/publish/*.*' target='lib/netcoreapp2.1' />
+        <file src="../icon.png" target="icon.png" />
+    </files>
+</package>

@@ -1,0 +1,55 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Spinup",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/LeaseCalc.SpinUp/spinup.py",
+      "console": "integratedTerminal",
+      "env": {
+          "AZURE_STORAGE_CONNECTION_STRING":"DefaultEndpointsProtocol=https;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;"
+      }
+    },
+    {
+      "name": "LeaseCalc.Functions",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:azureFunctions.pickProcess}"
+    },
+    {
+      "name": "Insurance.Api",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-api",
+      "program": "${workspaceFolder}/LeaseCalc.Insurance.Api/bin/Debug/net5.0/LeaseCalc.Insurance.Api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/LeaseCalc.Insurance.Api",
+      "console": "externalTerminal",
+      "stopAtEntry": false
+    },
+    {
+      "name": "Attach to .NET Functions",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:azureFunctions.pickProcess}"
+    },
+    {
+      "name": "SpinUp",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-spinup",
+      "program": "${workspaceFolder}/LeaseCalc.SpinUp/bin/Debug/net5.0/LeaseCalc.SpinUp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "console": "internalConsole",
+      "env": {
+        "AzureStorageConnection": "DefaultEndpointsProtocol=https;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://localhost:10000/devstoreaccount1;QueueEndpoint=http://localhost:10001/devstoreaccount1;"
+      }
+    }
+  ]
+}
