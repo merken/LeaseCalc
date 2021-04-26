@@ -1,23 +1,27 @@
 version: '3'
 services:
-    
     nuget.server:
-        image: "loicsharma/baget:0b46f0ec87216e1dc6839277712ee07c1c2b611a"
+        #x64
+        #image: "loicsharma/baget:0b46f0ec87216e1dc6839277712ee07c1c2b611a"
+        #ARM64
+        image: "hub4rpi64/baget"
         container_name: nuget.server
         ports:
             - 8080:80
         environment:
             - NUGET_API_KEY
 
-    storage.emulator:
+    azurite:
         image: "mcr.microsoft.com/azure-storage/azurite:3.11.0"
-        container_name: storage.emulator
+        container_name: azurite
+        build:
+            context: .
+            dockerfile: spinup.Dockerfile
         ports:
             - 10000:10000
             - 10001:10001
         depends_on:
             - nuget.server
-        command: azurite --loose --blobHost 0.0.0.0 --queueHost 0.0.0.0 --skipApiVersionCheck
 
     leasecalc.spinup:
         container_name: leasecalc.spinup
@@ -27,7 +31,7 @@ services:
         environment:
             - AzureStorageConnection
         depends_on:
-            - storage.emulator
+            - azurite
 
     leasecalc.insurance.api:
         container_name: leasecalc.insurance.api
@@ -53,10 +57,10 @@ services:
             - MailJetPrivateKey
             - AZURE=true
         depends_on:
-            - storage.emulator
+            - azurite
             - nuget.server
             - leasecalc.insurance.api
         links:
             - leasecalc.insurance.api
-            - storage.emulator
+            - azurite
             - nuget.server

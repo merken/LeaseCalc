@@ -16,7 +16,6 @@ namespace BruteMonthlyLease.Component
             var amountToLease = rentalPrice - vehicleResidualValueAfterTerm;
 
             context.LeaseCalculationInformation.MonthlyLeasePrice = amountToLease / context.LeaseInformation.TermInMonths;
-            context.LeaseCalculationInformation.MonthlyLeasePrice += 10;
 
             return Task.FromResult(context);
         }
